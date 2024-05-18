@@ -26,15 +26,15 @@ constructors = {
         return ObjectTracker
     end,
     defaultOnlyPosition = function(object) -- no features supported
-        local ObjetTracker = {}
-        ObjetTracker.Object = object -- also used as key when key not given
+        local ObjectTracker = {}
+        ObjectTracker.Object = object -- also used as key when key not given
         function ObjectTracker:getPosition()
             return self.Object.Position
         end
         function ObjectTracker:getFCP() -- no support
             return self:getPosition()
         end
-        return ObjetTracker
+        return ObjectTracker
     end,
     model = function(model) -- all features supported
        return constructors.default(model.PrimaryPart, model.PrimaryPart.Size)
